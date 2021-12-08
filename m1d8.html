@@ -7,7 +7,6 @@
         .myHeading {
             color: red;
         }
-
     </style>
 </head>
 
@@ -35,7 +34,7 @@
 
         <button onclick="paintItGreen()">Click to paint lists</button>
 
-        <button onclick="changeUrls">Change Urls </button>
+        <button onsubmit="changeUrls()">Change Urls </button>
 
         <a onmouseover="changeUrls"
             href="https://s3.eu-west-1.amazonaws.com/eduflow-production/activity-resources/strive.school">This link goes
@@ -100,9 +99,9 @@
 
         const changeUrls = function () {
 
-            let newLinks = document.getElementsByTagName("a")
-            for (let newLink of newLinks) {
-                newLink.href = "https://www.google.com/"
+            let newLinks = document.querySelectorAll("a")
+            for (i = 0; i < newLinks; i++) {
+                newLinks[i].href = "https://www.google.com/"
             }
             //
         };
@@ -149,8 +148,8 @@
         const paintItGreen = function () {
 
             let colorUls = document.getElementsByTagName("ul")
-            for(let colorUl of colorUls){
-            colorUl.style.backgroundColor = "green"
+            for (let colorUl of colorUls) {
+                colorUl.style.backgroundColor = "green"
             }
             //
         };
@@ -163,8 +162,8 @@
 
             let headChangeColors = document.getElementsByTagName("h1, h2")
 
-            for (let headChangeColor of headChangeColors){
-                headChangeColorì
+            for (let headChangeColor of headChangeColors) {
+                headChangeColor
             }
             //
         };
@@ -176,18 +175,23 @@
         const changeFooterText = function () {
 
 
+            let newFootText = document.querySelector('div:last-of-type h2')
+            newFootText.innerHTML = "Bye bye"
+            
             //
-        };
+        }
+
+        changeFooterText ()
 
         /* EXERCISE 11
          Attach an event listener to the input field in the page for console logging its value just after any keystroke.
         */
 
-        const inputField = function(){
+        const inputField = function () {
 
-            console.log(document.getElementById('input-field').value); 
-    
-    }
+            console.log(document.getElementById('input-field').value);
+
+        }
 
         // ...
 
@@ -196,12 +200,19 @@
         */
 
         window.onload = function () {
+
+            alert("welcome on board!")
             //
         };
+
+    
 
         /* EXERCISE 13
          Use HTML5 tags to properly provide semantic meaning to the different portions of the page.
         */
+
+
+        
     </script>
 
 
