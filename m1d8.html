@@ -46,7 +46,7 @@
         </div>
 
         <div>
-            <input type="text" id="input-field" placeholder="input field for the exercise">
+            <input type="text" id="input-field" placeholder="input field for the exercise" onkeyup="inputField()">
         </div>
     </div>
 
@@ -175,7 +175,7 @@
 
         const changeFooterText = function () {
 
-            
+
             //
         };
 
@@ -183,7 +183,14 @@
          Attach an event listener to the input field in the page for console logging its value just after any keystroke.
         */
 
-        const inputField = document.getElementById("input-field");
+        const inputField = function(){
+
+        let input = document.getElementById("input-field");
+        alert("done")
+        
+    
+    }
+
         // ...
 
         /* EXERCISE 12
