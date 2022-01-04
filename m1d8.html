@@ -10,11 +10,11 @@
     </style>
 </head>
 
-<body>
+<body >
     <div>
         <h1 id="H1-ID" onmouseover="changeTitle('This is the new Title')" onclick="addClassToTitle()">This is the title
             of the page</h1>
-        <h2>This is the subtitle of the page</h2>
+        <h2 onclick="addParagraph()">This is the subtitle of the page</h2>
     </div>
 
     <div>
@@ -34,7 +34,7 @@
 
         <button onclick="paintItGreen()">Click to paint lists</button>
 
-        <button onsubmit="changeUrls()">Change Urls </button>
+        <button onclick="changePcontent()" onsubmit="changeUrls()">Change Urls </button>
 
         <a onmouseover="changeUrls"
             href="https://s3.eu-west-1.amazonaws.com/eduflow-production/activity-resources/strive.school">This link goes
@@ -49,9 +49,9 @@
         </div>
     </div>
 
-    <div>
+    <div >
         <p>And this text is just for the exercise too!</p>
-        <h2 style="color: red">
+        <h2  style="color: red">
             Save this page on your computer and open it with VSCode to get the
             questions!
         </h2>
@@ -63,7 +63,7 @@
 
         const changeTitle = function (newTitle) {
 
-            document.getElementById("H1-ID").innerHTML = newTitle
+            document.getElementById("H1-ID").innerText = newTitle
             //
         };
 
@@ -84,12 +84,14 @@
 
         const changePcontent = function () {
 
-            let c = document.getElementsByTagName("div")
+            let c = document.querySelectorAll("div p")
             for (i = 0; i < c.length; i++) {
-                c[i].children.innerHTML = "New P content"
+                c[i].innerText = "New P content"
             }
 
         }
+
+        
         //
 
 
@@ -124,8 +126,11 @@
          Write a function for adding a second paragraph to the first div.
         */
 
-        const addParagraph = function (content) {
+        const addParagraph = function () {
 
+            let paragraph = document.querySelector("div")
+            paragraph.innerHTML = "<p> New P </p>"
+            
 
             //
         };
@@ -203,7 +208,7 @@
 
             alert("welcome on board!")
             //
-        };
+        }
 
     
 
